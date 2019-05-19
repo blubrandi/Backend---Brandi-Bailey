@@ -9,27 +9,27 @@ module.exports = {
 };
 
 function find() {
-    return db('replate').select('id', 'volunteer_username', 'volunteer_name', 'volunteer_email', 'volunteer_phone');
+    return db('volunteers').select('id', 'volunteer_username', 'volunteer_name', 'volunteer_email', 'volunteer_phone');
 }
 
 function findBy(filter) {
-    return db('replate').where(filter);
+    return db('volunteers').where(filter);
 }
 
 function findById(id) {
-    return db('replate')
+    return db('volunteers')
         .where({ id })
         .first();
 }
 
 async function add(volunteer) {
-    const [id] = await db('replate').insert(volunteer);
+    const [id] = await db('volunteers').insert(volunteer);
 
     return findById(id);
 }
 
 function remove(id) {
-    return db('replate')
+    return db('volunteers')
         .where('id', id)
         .del();
 }
