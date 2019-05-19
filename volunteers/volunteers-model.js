@@ -9,7 +9,7 @@ module.exports = {
 };
 
 function find() {
-    return db('replate').select('id', 'business_username', 'business_email', 'business_name', 'business_address', 'business_phone', 'business_contact_person');
+    return db('replate').select('id', 'volunteer_username', 'volunteer_name', 'volunteer_email', 'volunteer_phone');
 }
 
 function findBy(filter) {
@@ -22,8 +22,8 @@ function findById(id) {
         .first();
 }
 
-async function add(business) {
-    const [id] = await db('replate').insert(business);
+async function add(volunteer) {
+    const [id] = await db('replate').insert(volunteer);
 
     return findById(id);
 }
