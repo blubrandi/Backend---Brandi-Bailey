@@ -1,0 +1,9 @@
+{
+  "name": "Backend---Brandi-Bailey",
+  "version": "1.0.0",
+  "description": "Backend Repo for Replate.  Uses Node.js, Express",
+  "main": "index.js",
+  "repository": "https://github.com/build-replate/Backend---Brandi-Bailey.git",
+  "author": "Brandi Bailey",
+  "license": "MIT"
+}
