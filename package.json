@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/build-replate/Backend---Brandi-Bailey.git",
   "author": "Brandi Bailey",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.0"
+  }
 }
