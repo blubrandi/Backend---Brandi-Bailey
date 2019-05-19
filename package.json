@@ -14,6 +14,10 @@
     "knex": "^0.17.0-next3",
     "sqlite3": "^4.0.8"
   },
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js"
+  },
   "devDependencies": {
     "dotenv": "^8.0.0",
     "nodemon": "^1.19.0"
