@@ -1,13 +1,31 @@
 
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('volunteers').del()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+      return knex('volunteers').insert([
+        {
+          volunteer_username: 'pennyw',
+          volunteer_password: 'test',
+          volunteer_name: 'Penny West',
+          volunteer_email: 'penny@test.com',
+          volunteer_phone: '505-123-4567'
+        },
+        {
+          volunteer_username: 'marka',
+          volunteer_password: 'test',
+          volunteer_name: 'Mark Anthony',
+          volunteer_email: 'mark@test.com',
+          volunteer_phone: '505-234-5678'
+        },
+        {
+          volunteer_username: 'brandin',
+          volunteer_password: 'test',
+          volunteer_name: 'Brandi West',
+          volunteer_email: 'brandi@test.com',
+          volunteer_phone: '505-345-6789'
+        },
       ]);
     });
 };
