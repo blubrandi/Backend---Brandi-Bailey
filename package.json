@@ -19,7 +19,6 @@
     "start": "node index.js"
   },
   "devDependencies": {
-    "dotenv": "^8.0.0",
     "nodemon": "^1.19.0"
   }
 }
