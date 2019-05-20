@@ -13,11 +13,11 @@ server.use(helmet())
 server.use(express.json())
 
 
-server.get('/', (req, res) => {
-    res.send(
-        `<h1>We're up and running, woot!</h1>`
-    )
-})
+// server.get('/', (req, res) => {
+//     res.send(
+//         `<h1>We're up and running, woot!</h1>`
+//     )
+// })
 
 //Volunteer Endpoints
 
