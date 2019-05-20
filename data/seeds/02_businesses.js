@@ -12,7 +12,8 @@ exports.seed = function (knex, Promise) {
           business_name: 'Dennys',
           business_address: '123 Adobe Lane NW, Albuquerque, NM 87114',
           business_phone: '575-123-4567',
-          business_contact_person: 'Robert'
+          business_contact_person: 'Robert',
+          user_type: 'business'
         },
         {
           business_username: 'cheddars',
@@ -21,7 +22,8 @@ exports.seed = function (knex, Promise) {
           business_name: 'Cheddars',
           business_address: '604 Adobe Lane NW, Albuquerque, NM 87114',
           business_phone: '575-234-5678',
-          business_contact_person: 'Taylor'
+          business_contact_person: 'Taylor',
+          user_type: 'business'
         },
         {
           business_username: 'thecooperage',
@@ -30,7 +32,8 @@ exports.seed = function (knex, Promise) {
           business_name: 'The Cooperage',
           business_address: '4520 Adobe Lane NW, Albuquerque, NM 87114',
           business_phone: '575-345-6789',
-          business_contact_person: 'RT'
+          business_contact_person: 'RT',
+          user_type: 'business'
         },
 
       ]);

@@ -10,6 +10,7 @@ exports.up = function (knex, Promise) {
             tbl.string('volunteer_name', 128).notNullable()
             tbl.string('volunteer_email', 128).unique().notNullable()
             tbl.string('volunteer_phone', 128).unique().notNullable()
+            tbl.string('user_type', 128).notNullable()
         })
 
         .createTable('businesses', tbl => {
@@ -22,6 +23,7 @@ exports.up = function (knex, Promise) {
             tbl.string('business_address', 528).notNullable()
             tbl.string('business_phone', 128).notNullable()
             tbl.string('business_contact_person', 128).notNullable()
+            tbl.string('user_type', 128).notNullable()
         })
 
         .createTable('requests', tbl => {
