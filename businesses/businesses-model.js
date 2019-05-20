@@ -9,7 +9,7 @@ module.exports = {
 };
 
 function find() {
-    return db('replate').select('id', 'business_username', 'business_email', 'business_name', 'business_address', 'business_phone', 'business_contact_person');
+    return db('replate').select('id', 'business_username', 'business_email', 'business_name', 'business_address', 'business_phone', 'business_contact_person', 'user_type');
 }
 
 function findBy(filter) {
