@@ -30,6 +30,10 @@
 * @api {post} https://replate-lambda.herokuapp.com/auth/login
 * User Login
 * @apiGroup Authentication
+* @apiSuccess {string} username Must be provided upon user login.  Required.
+* @apiSuccess {string} password Must be provided upon user login.  Required.
+* @apiSuccess {string} message Greeting returned from backend upon successful login.  Welcome + contact_name.
+* @apiSuccess {string} jsonwebtoken Will be returned by backend upon successful login.
 * @apiSuccessExample {Array} Success-Response:
 * 200 OK
 * {
@@ -39,9 +43,17 @@
 */
 
 /**
-* @api {get} https://replate-lambda.herokuapp.com/requests GET > all Requests, restricted
+* @api {get} https://replate-lambda.herokuapp.com/requests
+* Get All Requests, restricted
 * @apiGroup Requests
-* @apiSuccess {Array} Requests List of Requests
+* @apiSuccess {integer} id Automatically Increments
+* @apiSuccess {string} request_title Title of request, submitted by business.  Field required.
+* @apiSuccess {string} request_desc Description of request, submitted by business.  Field required.
+* @apiSuccess {boolean} completed Indicates if request has been completed by assigned volunteer.  Required.
+* @apiSuccess {date} request_expires_date Allows business to indicate date request will expire.
+* @apiSuccess {time} request_expires_time Allows business to indicate time request will expire.
+* @apiSuccess {integer} volunteer_assigned Indicates which volunteer is assigned, by ID, if a volunteer has claimed the request.
+* @apiSuccess {integer} business_requesting Indicates which business has submitted request, by ID.  Required.
 * @apiSuccessExample {Array} Success-Response:
 *   200 OK
 *  {
@@ -73,8 +85,39 @@
 **/
 
 /**
-* @api {get} https://replate-lambda.herokuapp.com/requests/3
-* Requests by ID, restricted
+* @api {post} https://replate-lambda.herokuapp.com/requests
+* Add Request, restricted
+* @apiGroup Requests
+* @apiSuccess {string} request_title Title of request, submitted by business.  Field required.
+* @apiSuccess {string} request_desc Description of request, submitted by business.  Field required.
+* @apiSuccess {boolean} completed Indicates if request has been completed by assigned volunteer.  Required.
+* @apiSuccess {date} request_expires_date Allows business to indicate date request will expire.
+* @apiSuccess {time} request_expires_time Allows business to indicate time request will expire.
+* @apiSuccess {integer} volunteer_assigned Indicates which volunteer is assigned, by ID, if a volunteer has claimed the request.
+* @apiSuccess {integer} business_requesting Indicates which business has submitted request, by ID.  Required.
+* @apiSuccessExample {Array} Success-Response:
+*   200 OK
+*  {
+*    "id": 1,
+*    "request_title": "Soup and sandwiches, pasta, and salad.",
+*    "request_desc": "Extra tomato soup, vegetable beef soup.  Various sandwiches.  Extra fettucini/alfredo and spaghetti",
+*    "volunteer_assigned": "",
+*    "business_requesting": "2",
+*    "completed": 1,
+*    "request_expires_date": "2019-05-21",
+*    "request_expires_time": "19:45:00"
+*  }
+* @apiError 401 User Not Authorized to Get Requests
+* @apiErrorExample Error-Response:
+* 401 Not Authorized
+* {
+*   "message": "Please log in to continue"
+* }
+**/
+
+/**
+* @api {get} https://replate-lambda.herokuapp.com/requests/id
+* Retrieve Request by ID, restricted
 * @apiGroup Requests
 * @apiSuccess {integer} id Automatically Increments
 * @apiSuccess {string} request_title Title of request, submitted by business.  Field required.
