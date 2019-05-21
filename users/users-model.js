@@ -23,8 +23,8 @@ function findById(id) {
         .first();
 }
 
-async function add(volunteer) {
-    const [id] = await db('users').insert(volunteer);
+async function add(user) {
+    const [id] = await db('users').insert(user);
 
     return findById(id);
 }

@@ -4,7 +4,7 @@ const router = require('express').Router()
 const Requests = require('../requests/requests-model.js')
 const restricted = require('../auth/restricted.js')
 
-router.get('/requests', restricted, (req, res) => {
+router.get('/', restricted, (req, res) => {
     Requests.find()
         .then(requests => {
             res.json(requests);
