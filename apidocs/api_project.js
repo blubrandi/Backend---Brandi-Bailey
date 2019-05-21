@@ -1,0 +1,1 @@
+define({  "name": "Backend---Brandi-Bailey",  "version": "1.0.0",  "description": "Backend Repo for Replate.  Uses Node.js, Express",  "sampleUrl": false,  "defaultVersion": "0.0.0",  "apidoc": "0.3.0",  "generator": {    "name": "apidoc",    "time": "2019-05-21T21:53:58.118Z",    "url": "http://apidocjs.com",    "version": "0.17.7"  }});
