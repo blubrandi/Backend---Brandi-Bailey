@@ -2,6 +2,14 @@
  * @api {post} https://replate-lambda.herokuapp.com/auth/register
  * New User Registration
  * @apiGroup Authentication
+ * @apiSuccess {integer} id Automatically Increments
+ * @apiSuccess {string} username User must provide username on account creation.  Required.
+ * @apiSuccess {string} password User must provide password on account creation.  Returns hashed.  Required.
+ * @apiSuccess {string} business_name User can provide Business Name on account creation, if they're a business.  Not Required since volunteers will not have a business name.
+ * @apiSuccess {string} contact_name User must provide a contact name on account creation.  Required.
+ * @apiSuccess {string} address User can provide an address on account creation, if they're a business.  Not Required since volunteers will not need to provide an address.
+ * @apiSuccess {string} phone User must provide a phone number on account creation.  Required.
+ * @apiSuccess {string} jsonwebtoken Will be returned by backend upon account creation.
  * @apiSuccessExample {Array} Success-Response:
  *  201 Created
  * {
@@ -65,10 +73,18 @@
 **/
 
 /**
-* @api {get} https://replate-lambda.herokuapp.com/requests/3 GET > Requests by ID, restricted
+* @api {get} https://replate-lambda.herokuapp.com/requests/3
+* Requests by ID, restricted
 * @apiGroup Requests
-* @apiSuccess {Array} Requests Returns requests by ID
-* @apiSuccessExample {Array} Success-Response:
+* @apiSuccess {integer} id Automatically Increments
+* @apiSuccess {string} request_title Title of request, submitted by business.  Field required.
+* @apiSuccess {string} request_desc Description of request, submitted by business.  Field required.
+* @apiSuccess {boolean} completed Indicates if request has been completed by assigned volunteer.  Required.
+* @apiSuccess {date} request_expires_date Allows business to indicate date request will expire.
+* @apiSuccess {time} request_expires_time Allows business to indicate time request will expire.
+* @apiSuccess {integer} volunteer_assigned Indicates which volunteer is assigned, by ID, if a volunteer has claimed the request.
+* @apiSuccess {integer} business_requesting Indicates which business has submitted request, by ID.  Required.
+* @apiSuccessExample {Object} Success-Response:
 *   200 OK
 * {
 *  "id": 3,
