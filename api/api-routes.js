@@ -1,4 +1,36 @@
 /**
+ * @api {post} https://replate-lambda.herokuapp.com/auth/register
+ * New User Registration
+ * @apiGroup Authentication
+ * @apiSuccessExample {Array} Success-Response:
+ *  201 Created
+ * {
+ *  "id": 4,
+ *  "username": "supercooluser",
+ *  "password": "$2a$11$ilL/S6eCqUv8W.hGds.TVuMvph/gH7WuXjxjgz5ZRQTxCSyvidtDS",
+ *  "business_name": null,
+ *  "contact_name": "Mr Super Cool",
+ *  "address": null,
+ *  "email": "scu@test.com",
+ *  "phone": "505-888-4345",
+ *  "user_type": "volunteer",
+ *  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cGVyY29vbHVzZXIiLCJ1c2VyVHlwZSI6InZvbHVudGVlciIsImlhdCI6MTU1ODQ3NjQxNCwiZXhwIjoxNTU4NDgwMDE0fQ.wsQs7k_aHPzQJwbTzS4BfkEgBvvl6Yq1lF5uzgsJrds"
+ * }
+ */
+
+/**
+* @api {post} https://replate-lambda.herokuapp.com/auth/login
+* User Login
+* @apiGroup Authentication
+* @apiSuccessExample {Array} Success-Response:
+* 200 OK
+* {
+*  "message": "Welcome, Mr Super Cool!",
+*  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo0LCJ1c2VybmFtZSI6InN1cGVyY29vbHVzZXIiLCJ1c2VyVHlwZSI6InZvbHVudGVlciIsImlhdCI6MTU1ODQ3NzE3NCwiZXhwIjoxNTU4NDgwNzc0fQ.E66jW9zo9-NYrUJO2GZ8MBjDodINBraIkhj3jyhypOs"
+* }
+*/
+
+/**
 * @api {get} https://replate-lambda.herokuapp.com/requests GET > all Requests, restricted
 * @apiGroup Requests
 * @apiSuccess {Array} Requests List of Requests
