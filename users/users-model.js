@@ -10,33 +10,33 @@ module.exports = {
 };
 
 function find() {
-    return db('volunteers').select('id', 'volunteer_username', 'volunteer_name', 'volunteer_email', 'volunteer_phone', 'user_type');
+    return db('users').select('id', 'username', 'password', 'business_name', 'contact_name', 'email', 'phone', 'address', 'user_type');
 }
 
 function findBy(filter) {
-    return db('volunteers').where(filter);
+    return db('users').where(filter);
 }
 
 function findById(id) {
-    return db('volunteers')
+    return db('users')
         .where({ id })
         .first();
 }
 
 async function add(volunteer) {
-    const [id] = await db('volunteers').insert(volunteer);
+    const [id] = await db('users').insert(volunteer);
 
     return findById(id);
 }
 
 function update(id, changes) {
-    return db('volunteers')
+    return db('users')
         .where({ id })
         .update(changes, '*');
 }
 
 function remove(id) {
-    return db('volunteers')
+    return db('users')
         .where('id', id)
         .del();
 }

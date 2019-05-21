@@ -17,7 +17,7 @@ exports.seed = function (knex, Promise) {
         {
           request_title: 'BBQ Ribs',
           request_desc: 'Leftover BBQ Ribs from lunch',
-          volunteer_assigned: '3',
+          volunteer_assigned: '1',
           business_requesting: '1',
           completed: false,
           request_expires_date: '2019-05-21',
