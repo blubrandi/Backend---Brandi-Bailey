@@ -15,6 +15,6 @@ module.exports = (req, res, next) => {
             }
         });
     } else {
-        res.status(401).json({ err, message: 'Please log in to continue' })
+        res.status(401).json({ message: 'Please log in to continue' })
     }
 };
