@@ -25,11 +25,21 @@ router.put('/:id', restricted, (req, res) => {
     const { request_title, request_desc, volunteer_assigned, completed, request_expires_date, request_expires_time } = req.body
     Requests.update(id, { request_title, request_desc, volunteer_assigned, completed, request_expires_date, request_expires_time })
         .then(request => {
-            res.json(request);
+            res.json(request)
         })
         .catch(error => {
-            res.status(500).json({ error: error, message: "Cannot update request" });
-        });
-});
+            res.status(500).json({ error: error, message: 'Cannot update request' })
+        })
+})
+
+router.delete('/:id', restricted, (req, res) => {
+    Requests.remove(req.params.id)
+        .then(request => {
+            res.status(200).json({ message: 'Request has been deleted' })
+        })
+        .catch(error => {
+            res.status(500).json({ error, message: 'Error deleting request.' })
+        })
+})
 
 module.exports = router
