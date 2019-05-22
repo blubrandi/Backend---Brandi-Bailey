@@ -1,4 +1,4 @@
-# Lambda School Build Week -- RePlate    
+# Lambda School Build Week: RePlate    
 ## Backend By Brandi Bailey
 This Github Repo is the backend for Lambda RePlate Build Week.
 
@@ -12,10 +12,10 @@ https://replate-endpoints.netlify.com/
 
 This is a collaborative project.  Feel free to explore the organization for the marketing pages and frontend that were created by fellow students.  
 
-Marketing Pages:  
+*Marketing Pages:*  
 (link with credit will be provided soon)
 
-Front End:  
+*Front End:*   
 (link with credit will be provided soon)
 
 #### More Info...
