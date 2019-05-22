@@ -21,7 +21,11 @@ module.exports = {
     seeds: {
       directory: './data/seeds',
     },
-
+    pool: {
+      afterCreate: (conn, done) => {
+        conn.run('PRAGMA foreign_keys = ON', done);
+      },
+    },
   },
 
   testing: {
@@ -42,6 +46,7 @@ module.exports = {
     client: 'pg',
     connection: productionDbConnection + '?ssl=true',
     migrations: {
+      tableName: 'knex_migrations',
       directory: './data/migrations',
     },
     seeds: {
