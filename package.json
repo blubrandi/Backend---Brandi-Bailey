@@ -19,7 +19,8 @@
   },
   "scripts": {
     "server": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "resetDB": "npx knex migrate:rollback && npx knex migrate:latest"
   },
   "devDependencies": {
     "nodemon": "^1.19.0"
