@@ -18,6 +18,6 @@ Marketing Pages:
 Front End:  
 (link with credit will be provided soon)
 
-### More   
+#### More Info...
 
-Approximately 5 weeks ago, I worked on this same project with another group as a front-end.  I will fork that project and make adjustments to connect to this backend.  Link will be provided in the coming days/weeks, as time allows.
+Approximately 5 weeks prior to this backend launch (April 2019), I worked on this same project with another group as a front-end.  I will fork that project and make adjustments to connect to this backend.  Link will be provided in the coming days/weeks, as time allows.
