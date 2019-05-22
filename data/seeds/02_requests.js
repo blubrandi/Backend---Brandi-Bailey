@@ -8,7 +8,7 @@ exports.seed = function (knex, Promise) {
         {
           request_title: 'Soup and sandwiches, pasta, and salad.',
           request_desc: 'Extra tomato soup, vegetable beef soup.  Various sandwiches.  Extra fettucini/alfredo and spaghetti',
-          volunteer_assigned: '',
+          volunteer_assigned: '1',
           business_requesting: '2',
           completed: false,
           request_expires_date: '2019-05-21',
