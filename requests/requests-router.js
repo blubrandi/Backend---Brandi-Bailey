@@ -4,7 +4,7 @@ const router = require('express').Router()
 const Requests = require('../requests/requests-model.js')
 const restricted = require('../auth/restricted.js')
 
-router.get('/', restricted, (req, res) => {
+router.get('/', (req, res) => {
     Requests.find()
         .then(requests => {
             res.json(requests);
@@ -12,7 +12,7 @@ router.get('/', restricted, (req, res) => {
         .catch(err => res.send(err))
 })
 
-router.get('/:id', restricted, (req, res) => {
+router.get('/:id', (req, res) => {
     Requests.findById(req.params.id)
         .then(requests => {
             res.json(requests)

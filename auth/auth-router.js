@@ -47,7 +47,7 @@ function generateToken(user) {
     const payload = {
         subject: user.id,
         username: user.username,
-        userType: user.user_type
+        userType: user.user_type,
     }
 
     const options = {

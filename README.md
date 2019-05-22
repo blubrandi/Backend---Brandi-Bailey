@@ -18,6 +18,6 @@ This is a collaborative project.  Feel free to explore the organization for the 
 **Front End:**    
 (link with credit will be provided soon)
 
-#### More Info...
+### More Info...
 
 Approximately 5 weeks prior to this backend launch (April 2019), I worked on this same project with another group as a front-end.  I will fork that project and make adjustments to connect to this backend.  Link will be provided in the coming days/weeks, as time allows.
