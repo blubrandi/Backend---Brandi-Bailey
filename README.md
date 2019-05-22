@@ -1,4 +1,4 @@
-# Lambda School Build Week -- RePlate.  
+# Lambda School Build Week -- RePlate    
 ## Backend By Brandi Bailey
 This Github Repo is the backend for Lambda RePlate Build Week.
 
@@ -10,4 +10,14 @@ https://replate-lambda.herokuapp.com/
 API Documentation can be found at:  
 https://replate-endpoints.netlify.com/
 
+This is a collaborative project.  Feel free to explore the organization for the marketing pages and frontend that were created by fellow students.  
 
+Marketing Pages:  
+(link with credit will be provided soon)
+
+Front End:  
+(link with credit will be provided soon)
+
+### More   
+
+Approximately 5 weeks ago, I worked on this same project with another group as a front-end.  I will fork that project and make adjustments to connect to this backend.  Link will be provided in the coming days/weeks, as time allows.
