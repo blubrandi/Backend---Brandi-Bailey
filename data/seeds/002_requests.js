@@ -1,14 +1,14 @@
 
 exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
-  return knex('requests').del()
+  return knex('requests').truncate()
     .then(function () {
       // Inserts seed entries
       return knex('requests').insert([
         {
           request_title: 'Soup and sandwiches, pasta, and salad.',
           request_desc: 'Extra tomato soup, vegetable beef soup.  Various sandwiches.  Extra fettucini/alfredo and spaghetti',
-          volunteer_assigned: 1,
+          volunteer_assigned: 2,
           business_requesting: 2,
           completed: false,
           request_expires_date: '2019-05-21',
@@ -26,7 +26,7 @@ exports.seed = function (knex, Promise) {
         {
           request_title: 'A lot of stuff from dinner service',
           request_desc: 'different ingredients and stuff from dinner',
-          volunteer_assigned: 1,
+          volunteer_assigned: 2,
           business_requesting: 2,
           completed: true,
           request_expires_date: '2019-05-21',

@@ -10,7 +10,7 @@ module.exports = {
 };
 
 function find() {
-    return db('requests').select('id', 'request_title', 'request_desc', 'volunteer_assigned', 'business_requesting', 'completed', 'request_expires_date', 'request_expires_time');
+    return db('requests').select('requests.id', 'request_title', 'request_desc', 'volunteer_assigned', 'business_requesting', 'completed', 'request_expires_date', 'request_expires_time', 'users.contact_name').join('users', 'requests.volunteer_assigned', 'users.id')
 }
 
 function findBy(filter) {
