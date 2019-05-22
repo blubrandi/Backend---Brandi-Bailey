@@ -25,8 +25,8 @@ exports.up = function (knex, Promise) {
             tbl.string('request_expires_date').notNullable()
             tbl.string('request_expires_time').notNullable()
 
-            tbl.string('volunteer_assigned').unsigned().references('contact_name').inTable('users').onDelete('RESTRICT').onUpdate('CASCADE')
-            tbl.string('business_requesting').unsigned().references('business_name').inTable('users').onDelete('RESTRICT').onUpdate('CASCADE')
+            tbl.integer('volunteer_assigned').unsigned().references('contact_name').inTable('users').onDelete('RESTRICT').onUpdate('CASCADE')
+            tbl.integer('business_requesting').unsigned().references('business_name').inTable('users').onDelete('RESTRICT').onUpdate('CASCADE')
 
         })
 
