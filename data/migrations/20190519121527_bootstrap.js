@@ -3,7 +3,7 @@ exports.up = function (knex, Promise) {
     return knex.schema
 
         .createTable('users', tbl => {
-            tbl.increments()
+            tbl.increments('id')
 
             tbl.string('username', 128).unique().notNullable()
             tbl.string('password', 528).notNullable()
@@ -17,7 +17,7 @@ exports.up = function (knex, Promise) {
 
 
         .createTable('requests', tbl => {
-            tbl.increments()
+            tbl.increments('id')
 
             tbl.string('request_title', 256).notNullable()
             tbl.string('request_desc', 528).notNullable()
@@ -34,7 +34,6 @@ exports.up = function (knex, Promise) {
 
 exports.down = function (knex, Promise) {
     return knex.schema
-
         .dropTableIfExists('users')
         .dropTableIfExists('requests')
 
