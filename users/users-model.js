@@ -7,6 +7,8 @@ module.exports = {
     find,
     findBy,
     findById,
+    findBusinessByID,
+    findVolunteerByID
 };
 
 function find() {
@@ -21,6 +23,18 @@ function findById(id) {
     return db('users')
         .where({ id })
         .first();
+}
+
+function findBusinessByID(id) {
+    return db('users')
+        .where({ id }).select('business_name', 'address', 'phone', 'contact_name', 'email')
+        .first()
+}
+
+function findVolunteerByID(id) {
+    return db('users')
+        .where({ id }).select('contact_name', 'phone')
+        .first()
 }
 
 async function add(user) {

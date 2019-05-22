@@ -9,12 +9,15 @@ module.exports = {
     update
 };
 
-function find() {
-    return db('requests').select('requests.id', 'request_title', 'request_desc', 'volunteer_assigned', 'business_requesting', 'completed', 'request_expires_date', 'request_expires_time', 'users.contact_name').join('users', 'requests.volunteer_assigned', 'users.id')
+
+async function find() {
+    return db('requests')
 }
 
+
 function findBy(filter) {
-    return db('requests').where(filter);
+    return db('requests')
+        .where(filter)
 }
 
 function findById(id) {
