@@ -25,13 +25,13 @@ exports.up = function (knex, Promise) {
             tbl.string("request_expires_date").notNullable()
             tbl.string("request_expires_time").notNullable()
 
-            tbl.string("volunteer_assigned").unsigned()
+            tbl.integer("volunteer_assigned").unsigned().references("id").inTable("users").onDelete("RESTRICT").onUpdate("CASCADE")
 
-            tbl.foreign("volunteer_assigned").references("id").inTable("users").onDelete("RESTRICT").onUpdate("CASCADE")
+            // tbl.foreign("volunteer_assigned").references("id").inTable("users").onDelete("RESTRICT").onUpdate("CASCADE")
 
-            tbl.string("business_requesting").unsigned()
+            tbl.integer("business_requesting").unsigned().references("id").inTable("users").onDelete("RESTRICT").onUpdate("CASCADE")
 
-            tbl.foreign("business_requesting").references("id").inTable("users").onDelete("RESTRICT").onUpdate("CASCADE")
+            // tbl.foreign("business_requesting").references("id").inTable("users").onDelete("RESTRICT").onUpdate("CASCADE")
         })
 };
 
