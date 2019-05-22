@@ -27,11 +27,11 @@ exports.up = function (knex, Promise) {
 
             tbl.string("volunteer_assigned").unsigned()
 
-            tbl.foreign("volunteer_assigned").references("contact_name").inTable("users").onDelete("RESTRICT").onUpdate("CASCADE")
+            tbl.foreign("volunteer_assigned").references("id").inTable("users").onDelete("RESTRICT").onUpdate("CASCADE")
 
             tbl.string("business_requesting").unsigned()
 
-            tbl.foreign("business_requesting").references("business_name").inTable("users").onDelete("RESTRICT").onUpdate("CASCADE")
+            tbl.foreign("business_requesting").references("id").inTable("users").onDelete("RESTRICT").onUpdate("CASCADE")
         })
 };
 
