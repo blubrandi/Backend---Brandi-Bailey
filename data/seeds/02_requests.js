@@ -15,7 +15,7 @@ exports.seed = function (knex, Promise) {
           request_expires_time: '19:45:00'
         },
         {
-          request_title: 'BBQ Ribs',
+          request_title: 'BBQ Ribs and more',
           request_desc: 'Leftover BBQ Ribs from lunch',
           volunteer_assigned: 1,
           business_requesting: 1,
@@ -26,6 +26,15 @@ exports.seed = function (knex, Promise) {
         {
           request_title: 'A lot of stuff from dinner service',
           request_desc: 'different ingredients and stuff from dinner',
+          volunteer_assigned: 2,
+          business_requesting: 3,
+          completed: true,
+          request_expires_date: '2019-05-21',
+          request_expires_time: '22:30:00'
+        },
+        {
+          request_title: 'There is a lot of food to take',
+          request_desc: 'canolis too',
           volunteer_assigned: 2,
           business_requesting: 3,
           completed: true,
