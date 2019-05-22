@@ -26,8 +26,6 @@ exports.up = function (knex, Promise) {
             tbl.boolean("completed").notNullable()
             tbl.string("request_expires_date").notNullable()
             tbl.string("request_expires_time").notNullable()
-
-
         })
 
 };
