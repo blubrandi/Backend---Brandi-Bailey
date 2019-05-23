@@ -34,7 +34,7 @@ router.get('/:id', restricted, async (req, res) => {
     }
 })
 
-router.post('/requests', restricted, (req, res) => {
+router.post('/', restricted, (req, res) => {
     const { id } = req.params
     const { request_title, request_desc, volunteer_assigned, completed, request_expires_date, request_expires_time } = req.body
     Requests.add(id, { request_title, request_desc, volunteer_assigned, completed, request_expires_date, request_expires_time })

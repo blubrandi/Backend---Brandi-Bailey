@@ -26,10 +26,9 @@ function findById(id) {
         .first();
 }
 
-async function add(request) {
+function add(id) {
     return db('requests')
         .where({ id })
-        .insert(request);
 }
 
 function update(id, changes) {
