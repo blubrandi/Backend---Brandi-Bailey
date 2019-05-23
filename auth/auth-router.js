@@ -11,11 +11,11 @@ router.post('/register', (req, res) => {
     const hash = bcrypt.hashSync(user.password, 11);
     user.password = hash;
 
-    // const token = generateToken(user)
+
     Users.add(user)
         .then(newUser => {
-            newUser.token = token
-            res.status(200).json(newUser, token);
+            const token = generateToken(user)
+            res.status(200).json(newUser, token)
         })
         .catch(error => {
             res.status(500).json(error);
