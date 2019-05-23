@@ -29,6 +29,7 @@ function findById(id) {
 function add(id) {
     return db('requests')
         .where({ id })
+        .first()
 }
 
 function update(id, changes) {
