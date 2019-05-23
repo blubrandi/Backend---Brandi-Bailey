@@ -11,7 +11,7 @@ router.get('/', restricted, (req, res) => {
         .catch(err => res.send(err));
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', restricted, (req, res) => {
     Users.findById(req.params.id)
         .then(users => {
             res.json(users);
