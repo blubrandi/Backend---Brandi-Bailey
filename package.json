@@ -21,7 +21,7 @@
     "server": "nodemon index.js",
     "start": "node index.js",
     "resetDB": "npx knex migrate:rollback && npx knex migrate:latest",
-    "test": "jest"
+    "test": "cross=env DB_ENV=testing jest --watch",
   },
   "devDependencies": {
     "jest": "^24.8.0",
