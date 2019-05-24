@@ -1,9 +1,13 @@
-
-//supertest
-
 const request = require('supertest')
 
-const server = require('./server.js')
+const { server } = require('./server.js')
+
+const Users = require('../users/users-model.js')
+const Requests = require('../requests/requests-model.js')
+const db = require('../data/dbConfig.js')
+
+const express = require('express')
+const app = require('./server.js')
 
 describe('server', () => {
 
@@ -11,36 +15,49 @@ describe('server', () => {
         expect(process.env.DB_ENV).toBe('testing')
     })
 
-    //open client, make a request and inspect the response
-    describe('GET /', () => {
-        it('should return 200 OK', () => {
-            // we return the promise
-            return request(server)
-                .get('/')
-                .expect(200);
-        });
+})
 
-        it('using the squad (async/await)', async () => {
-            // use the squad
-            const res = await request(server).get('/');
-            expect(res.status).toBe(200);
-        });
-
-        it('should return JSON using done callback', done => {
-            // using the done callback
-            request(server)
-                .get('/')
-                .then(res => {
-                    expect(res.type).toBe('application/json'); // Content-Type
-                    done();
-                });
-        });
-
-        it('should return { api: "up" }', async () => {
-            let res = await request(server)
-                .get('/');
-            const { body } = res;
-            expect(body.api).toBe('up');
-        })
+describe('GET /', () => {
+    // token not being sent - should respond with a 401
+    test('It should require authorization to get users', () => {
+        return request(app)
+            .get('/users')
+            .then((response) => {
+                expect(response.statusCode).toBe(401);
+            });
     });
-});
+
+    test('It should require authorization to get requests', () => {
+        return request(app)
+            .get('/requests')
+            .then((response) => {
+                expect(response.statusCode).toBe(401);
+            });
+    });
+
+    test('It should require authorization to add requests', () => {
+        return request(app)
+            .post('/requests')
+            .then((response) => {
+                expect(response.statusCode).toBe(401);
+            });
+    });
+
+    test('It should require authorization to delete a requests', () => {
+        return request(app)
+            .delete('/requests/2')
+            .then((response) => {
+                expect(response.statusCode).toBe(401);
+            });
+    });
+
+    test('It should require authorization to delete a user', () => {
+        return request(app)
+            .delete('/users/2')
+            .then((response) => {
+                expect(response.statusCode).toBe(401);
+            });
+    });
+
+})
+
