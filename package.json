@@ -20,9 +20,11 @@
   "scripts": {
     "server": "nodemon index.js",
     "start": "node index.js",
-    "resetDB": "npx knex migrate:rollback && npx knex migrate:latest"
+    "resetDB": "npx knex migrate:rollback && npx knex migrate:latest",
+    "test": "jest"
   },
   "devDependencies": {
+    "jest": "^24.8.0",
     "nodemon": "^1.19.0"
   }
 }
